@@ -4,7 +4,7 @@ Collection of small JavaScript helpers. These are usable either in regular JavaS
 
 ## Documentation
 
-- [simulateMouseEvent](#simulateMouseEvent)
+- [simulateMouseEvent](#simulatemouseevent)
 
 ### simulateMouseEvent
 
