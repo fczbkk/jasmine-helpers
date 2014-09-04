@@ -4,23 +4,58 @@ Collection of small JavaScript helpers. These are usable either in regular JavaS
 
 ## Documentation
 
-### simulateMouseEvent(obj[, properties])
+- [simulateMouseEvent](#simulateMouseEvent)
 
-Simulates any mouse event. If not configured otherwise, simulates a click on
-the element.
+### simulateMouseEvent
 
 ```javascript
-// click on element
-simulateMouseEvent(my_element);
-
-// right-click on element
-simulateMouseEvent(my_element, {button: 2});
-
-// middle mouse button pressed on element
-simulateMouseEvent(my_element, {type: 'mousedown', button: 1})
+simulateMouseEvent(object, event_type, button, properties)
 ```
 
-[See complete list of event properties at MDN.](https://developer.mozilla.org/en-US/docs/Web/API/event.initMouseEvent)
+Simulates any mouse event. This is very handy when testing user interactions with the UI. Event object allows you to set lots of various properties, but most of the time, you just care about two of them: event type (usualy `click`) and mouse button (usualy `left`).
+
+#### Parameters
+
+**object**  
+Which DOM object should receive the event. This should be a reference to an element or `document.body`.
+
+**event_type** (default `click`)  
+This is a list of valid values you can use: `click`, `mousedown`, `mouseup`, `mouseover`, `mousemove` and `mouseout`.
+
+**button** (default `left`)  
+Default value is `left`. This represents a mouse button that triggers the event. Valid values are: `left`, `right` and `middle`.
+
+**properties**  
+Object with event properties. You will probably only need this in special cases. For example when you need to specify exact coordinates of the mouse at the time of event. [See complete list of event properties at MDN.](https://developer.mozilla.org/en-US/docs/Web/API/event.initMouseEvent)
+
+#### Examples
+
+Left-click on the element:
+
+```javascript
+simulateMouseEvent(my_element);
+```
+
+Left mouse button pressed on the element:
+
+```javascript
+simulateMouseEvent(my_element, 'mousedown');
+```
+
+Right mouse button pressed on the element:
+
+```javascript
+simulateMouseEvent(my_element, 'mousedown', 'right');
+```
+
+Right mouse button pressed on  the element at coordinates `x: 100px, y: 100px`:
+
+```javascript
+simulateMouseEvent(my_element, 'mousedown', 'right', {
+  clientX: 100, clientY: 100
+});
+```
+
 
 ## Bug reports, feature requests and contact
 
