@@ -1,0 +1,27 @@
+{
+  "name": "jasmine-helpers",
+  "version": "0.1.0",
+  "homepage": "https://github.com/fczbkk/jasmine-helpers",
+  "authors": [
+    "Riki Fridrich <riki@fczbkk.com> (http://github.com/fczbkk)"
+  ],
+  "description": "Collection of small JavaScript helpers intended to be used with testing framework Jasmine.",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "jasmine",
+    "helper",
+    "js",
+    "javascript"
+  ],
+  "license": "UNLICENSE",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "coffee"
+  ]
+}

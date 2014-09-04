@@ -1,6 +1,10 @@
-# JS Helpers
+# Jasmine Helpers
 
-Collection of small JavaScript helpers. These are usable either in regular JavaScript projects, or with testing frameworks (e.g. Jasmine).
+Collection of small JavaScript helpers. These are intended to be used with JavaScript testing framework [Jasmine](https://github.com/pivotal/jasmine).
+
+## How to use
+
+TODO
 
 ## Documentation
 
@@ -57,10 +61,14 @@ simulateMouseEvent(my_element, 'mousedown', 'right', {
 ```
 
 
+## How to contribute
+
+TODO
+
 ## Bug reports, feature requests and contact
 
-If you found any bugs, if you have feature requests or any questions, please, either [file an issue at GitHub](https://github.com/fczbkk/js-helpers/issues) or send me an e-mail at [riki@fczbkk.com](mailto:riki@fczbkk.com).
+If you found any bugs, if you have feature requests or any questions, please, either [file an issue at GitHub](https://github.com/fczbkk/jasmine-helpers/issues) or send me an e-mail at [riki@fczbkk.com](mailto:riki@fczbkk.com).
 
 ## License
 
-JS Helpers is published under the [UNLICENSE license](https://github.com/fczbkk/js-helpers/blob/master/UNLICENSE). Feel free to use it in any way.
+JS Helpers is published under the [UNLICENSE license](https://github.com/fczbkk/jasmine-helpers/blob/master/UNLICENSE). Feel free to use it in any way.

@@ -1,11 +1,11 @@
 {
-  "title": "JS Helpers",
-  "name": "js-helpers",
+  "title": "Jasmine Helpers",
+  "name": "jasmine-helpers",
   "version": "0.1.0",
-  "description": "Collection of small JavaScript helpers.",
+  "description": "Collection of small JavaScript helpers for Jasmine.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fczbkk/js-helpers.git"
+    "url": "https://github.com/fczbkk/jasmine-helpers.git"
   },
   "author": {
     "name": "Riki Fridrich",
@@ -14,9 +14,9 @@
   },
   "license": "UNLICENSE",
   "bugs": {
-    "url": "https://github.com/fczbkk/js-helpers/issues"
+    "url": "https://github.com/fczbkk/jasmine-helpers/issues"
   },
-  "homepage": "https://github.com/fczbkk/js-helpers",
+  "homepage": "https://github.com/fczbkk/jasmine-helpers",
   "devDependencies": {
     "grunt": "*",
     "grunt-coffeelint": "*",

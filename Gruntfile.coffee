@@ -12,7 +12,7 @@ module.exports = (grunt) ->
 
     jasmine:
       default:
-        src: ['js/*.js']
+        src: ['helpers/*.js']
         options:
           keepRunner: false
           outfile: 'test/spec_runner.html'
@@ -26,7 +26,7 @@ module.exports = (grunt) ->
         flatten: true
         cwd: 'coffee'
         src: ['*.coffee']
-        dest: 'js/'
+        dest: 'helpers/'
         ext: '.js'
       test:
         expand: true
