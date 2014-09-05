@@ -37,6 +37,7 @@ grunt.initConfig({
 - Elements
   - [createPositionedElement](#createpositionedelement)
   - [insertPositionedElement](#insertpositionedelement)
+  - [Note regarding positioned elements](#note-regarding-positioned-elements)
 - Events
   - [simulateEvent](#simulateevent)
   - [simulateMouseEvent](#simulatemouseevent)
