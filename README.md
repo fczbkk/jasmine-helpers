@@ -4,7 +4,33 @@ Collection of small JavaScript helpers. These are intended to be used with JavaS
 
 ## How to use
 
-TODO
+The easiest way to add these helpers to your project is to use [Bower](http://bower.io/):
+
+```shell
+bower install jasmine-helpers
+```
+
+Then point to these helpers in your Jasmine runner. For example:
+
+```html
+<script src="bower_components/jasmine-helpers/helpers/simulate-event.js"></script>
+```
+
+If you are using [Grunt](http://gruntjs.com/) to run your Jasmine tests automatically (I highly recommend it), add the path to helpers in the configuration, like this:
+
+```javascript
+grunt.initConfig({
+  jasmine: {
+    pivotal: {
+      src: '...',
+      options: {
+        specs: '...',
+        helpers: 'bower_components/jasmine-helpers/helpers/*.js'
+      }
+    }
+  }
+});
+```
 
 ## Documentation
 
