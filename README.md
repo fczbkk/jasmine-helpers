@@ -52,10 +52,10 @@ NOTE: Be careful when manually firing `window.onload` event. Every onload listen
 
 #### Parameters
 
-**object**
+**object**  
 Object that should fire the element. E.g. `window`.
 
-**event_type**
+**event_type**  
 Any event name that can be fired
 
 #### Example
