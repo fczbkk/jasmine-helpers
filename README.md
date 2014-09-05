@@ -34,8 +34,118 @@ grunt.initConfig({
 
 ## Documentation
 
-- [simulateEvent](#simulateevent)
-- [simulateMouseEvent](#simulatemouseevent)
+- Elements
+  - [createPositionedElement](#createpositionedelement)
+  - [insertPositionedElement](#insertpositionedelement)
+- Events
+  - [simulateEvent](#simulateevent)
+  - [simulateMouseEvent](#simulatemouseevent)
+
+
+
+### createPositionedElement
+
+```javascript
+createPositionedElement(left, top, css_attributes);
+```
+
+Creates absolutely positioned DIV element and returns it. It does not insert it to the document (that's what `insertPositionedElement()` is for).
+
+By default the size of the element is 100*100px. You can change this (and any other CSS attribute) via the third parameter.
+
+#### Parameters
+
+**left** (default `100`)  
+**top** (default `100`)
+Left and top position of the element.
+
+**css_attributes**
+Object with CSS attributes and their values. All these will be set to element
+
+#### Examples
+
+Returns absolutely positioned DIV element at position 0,0 and size 100*100px:
+
+```javascript
+var my_element = createPositionedElement();
+```
+
+Returns element positioned at 100,200:
+
+```javascript
+var my_element = createPositionedElement(100, 200);
+```
+
+Returns red element:
+
+```javascript
+var my_element = createPositionedElement(null, null, {background: 'red'});
+```
+
+
+### insertPositionedElement
+
+```javascript
+insertPositionedElement(left, top, parent_node, css_attributes);
+```
+
+This is basicaly the same as [`createPositionedElement()`], but it also inserts the created element to the document (or any other DOM node).
+
+#### Parameters
+
+**left** (default `100`)  
+**top** (default `100`)  
+Left and top position of the element.
+
+**parent_node** (default `document.body`)  
+DOM node into which created element should be inserted. This allows you to easily create nested DOM structures.
+
+**css_attributes**  
+Object with CSS attributes and their values. All these will be set to element
+
+#### Examples
+
+Insert new positioned element with default position to the BODY:
+
+```javascript
+var my_element = insertPositionedElement()
+```
+
+Nest one element into another:
+
+```javascript
+var outer_element = insertPositionedElement();
+outer_element.parentNode; // document.body
+
+var inner_element = insertPositionedElement(null, null, outer_element);
+inner_element.parentNode; // outer_element
+```
+
+
+
+### NOTE regarding positioned elements
+
+All positioned elements created using [`createPositionedElement()`](#createpositionedElement) or [`insertPositionedElement()`](#insertpositionedElement) have classname `created-positioned-element`. This is handy when you need to cleanup all created elements during your tests:
+
+```javascript
+describe('my tests', function () {
+
+  afterEach(function () {
+    // find all created elements inserted to the document...
+    var elements = document.querySelectorAll('.created-positioned-element');
+    // ...and remove them
+    for (var i = 0; i < elements.length; i++) {
+      elements[i].parentNode.removeChild(elements[i]);
+    }
+  });
+
+  it('test that inserts elements', function () {
+    // ...
+  })
+
+});
+```
+
 
 
 ### simulateEvent
@@ -56,9 +166,9 @@ NOTE: Be careful when manually firing `window.onload` event. Every onload listen
 Object that should fire the element. E.g. `window`.
 
 **event_type**  
-Any event name that can be fired
+Any event name that can be fired. E.g. `scroll`.
 
-#### Example
+#### Examples
 
 Fire the `window.onscroll` event after you scroll the viewport:
 
