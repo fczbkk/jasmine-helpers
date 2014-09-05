@@ -10,6 +10,37 @@ TODO
 
 - [simulateMouseEvent](#simulatemouseevent)
 
+
+### simulateEvent
+
+```javascript
+simulateEvent(object, event_type)
+```
+
+This is handy if you want to test events that are otherwise hard to fire.
+
+For example `window.onscroll` does not fire if you call `window.scrollTo()` or `window.scrollBy()` methods. If you need to test interactions when user scrolls the content, you will need to fire the event manually.
+
+NOTE: Be careful when manually firing `window.onload` event. Every onload listener will be activated, not just the one you want to test. Which can have [funny effects on your testing environment](https://www.youtube.com/watch?v=lhkn9PaG0QQ).
+
+#### Parameters
+
+**object**
+Object that should fire the element. E.g. `window`.
+
+**event_type**
+Any event name that can be fired
+
+#### Example
+
+Fire the `window.onscroll` event after you scroll the viewport:
+
+```javascript
+window.scrollBy(0, 100);
+simulateEvent(window, 'scroll');
+```
+
+
 ### simulateMouseEvent
 
 ```javascript

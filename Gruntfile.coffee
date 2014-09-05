@@ -24,7 +24,7 @@ module.exports = (grunt) ->
           bare: true
         expand: true
         flatten: true
-        cwd: 'coffee'
+        cwd: 'src/coffee'
         src: ['*.coffee']
         dest: 'helpers/'
         ext: '.js'
@@ -40,7 +40,7 @@ module.exports = (grunt) ->
       options:
         atBegin: true
       src:
-        files: ['coffee/*.coffee']
+        files: ['src/coffee/*.coffee']
         tasks: ['coffeelint:src', 'coffee:src', 'jasmine']
       test:
         files: ['test/src/*.coffee']
