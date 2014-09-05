@@ -34,6 +34,7 @@ grunt.initConfig({
 
 ## Documentation
 
+- [simulateEvent](#simulateevent)
 - [simulateMouseEvent](#simulatemouseevent)
 
 
