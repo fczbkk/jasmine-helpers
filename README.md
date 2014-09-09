@@ -60,7 +60,7 @@ The results are normalised. So asking for any size properties (e.g. `width`) wil
 **element**  
 Reference to the element from which you'd like to retrieve value of CSS property.
 
-**property_name**
+**property_name**  
 Name of the CSS property.
 
 #### Examples
