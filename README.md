@@ -34,6 +34,8 @@ grunt.initConfig({
 
 ## Documentation
 
+- CSS
+  - [getCssProperty](#getcssproperty)
 - Elements
   - [createPositionedElement](#createpositionedelement)
   - [insertPositionedElement](#insertpositionedelement)
@@ -41,6 +43,49 @@ grunt.initConfig({
 - Events
   - [simulateEvent](#simulateevent)
   - [simulateMouseEvent](#simulatemouseevent)
+
+
+### getCssProperty
+
+```javascript
+getCssProperty(elment, property_name);
+```
+
+Returns computed value of CSS property for given element. Event the default values for undefined properties (e.g. `block` for `display` property in DIV).
+
+The results are normalised. So asking for any size properties (e.g. `width`) will always return value in pixels, colors will be returned in `rgb(...)` format, etc. See examples below.
+
+#### Parameters
+
+**element**  
+Reference to the element from which you'd like to retrieve value of CSS property.
+
+**property_name**
+Name of the CSS property.
+
+#### Examples
+
+```html
+<div id="myElement" style="width: 100px; background: red;"></div>
+```
+
+Get value of undefined property:
+
+```javascript
+getCssProperty(my_element, 'display');  // block
+```
+
+Get value of defined property:
+
+```javascript
+getCssProperty(my_element, 'width');  // 100px
+```
+
+Get value of normalized property:
+
+```javascript
+getCssProperty(my_element, 'background-color');  // rgb(255, 0, 0)
+```
 
 
 
