@@ -37,6 +37,7 @@ grunt.initConfig({
 - CSS
   - [getCssProperty](#getcssproperty)
 - Elements
+  - [isVisible](#isvisible)
   - [createPositionedElement](#createpositionedelement)
   - [insertPositionedElement](#insertpositionedelement)
   - [Note regarding positioned elements](#note-regarding-positioned-elements)
@@ -85,6 +86,32 @@ Get value of normalized property:
 
 ```javascript
 getCssProperty(my_element, 'background-color');  // rgb(255, 0, 0)
+```
+
+
+### isVisible
+
+```javascript
+isVisible(element);
+```
+
+Checks if element is present in the document and is visible. It will return `false` if:
+
+- Element does not exist.
+- Element exists, but is not inserted in the document.
+- Element is hidden via CSS by either `display: none` or `visibility: hidden`.
+
+#### Parameters
+
+**element**  
+Element which you'd like to check for visibility.
+
+#### Examples
+
+```javascript
+isVisible(my_element);  // true
+my_element.style.display = 'none';
+isVisible(my_element);  // false
 ```
 
 
