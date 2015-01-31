@@ -11,9 +11,6 @@ simulateEvent = function(obj, type) {
     event.eventName = type;
   }
   if (obj.dispatchEvent) {
-    obj.dispatchEvent(event);
-  }
-  if (obj.dispatchEvent) {
     return obj.dispatchEvent(event);
   } else if (obj.fireEvent && (typeof htmlEvents !== "undefined" && htmlEvents !== null ? htmlEvents["on" + type] : void 0)) {
     return obj.fireEvent("on" + type, event);

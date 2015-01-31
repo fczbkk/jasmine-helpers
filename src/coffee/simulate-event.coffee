@@ -21,9 +21,6 @@ simulateEvent = (obj, type) ->
     obj.dispatchEvent event
 
   # IE9-
-  if obj.dispatchEvent
-    obj.dispatchEvent event
-
   else if obj.fireEvent and htmlEvents?["on#{type}"]
     obj.fireEvent "on#{type}", event
 
