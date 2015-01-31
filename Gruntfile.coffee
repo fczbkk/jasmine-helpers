@@ -56,7 +56,9 @@ module.exports = (grunt) ->
         commitFiles: ['-a']
         pushTo: 'origin'
 
-
+    changelog:
+      options: {}
+    
   grunt.registerTask 'dev', [
     'coffeelint'
     'coffee'

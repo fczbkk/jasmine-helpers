@@ -19,11 +19,12 @@
   "homepage": "https://github.com/fczbkk/jasmine-helpers",
   "devDependencies": {
     "grunt": "*",
-    "grunt-coffeelint": "*",
-    "grunt-contrib-watch": "*",
-    "grunt-contrib-jasmine": "*",
-    "grunt-contrib-coffee": "*",
     "grunt-bump": "*",
+    "grunt-coffeelint": "*",
+    "grunt-contrib-coffee": "*",
+    "grunt-contrib-jasmine": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-conventional-changelog": "^1.1.0",
     "load-grunt-tasks": "*"
   }
 }
